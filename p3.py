@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 st.title('IRIS品種預測')
-knn = joblib.load('knn.joblib')
+knn = joblib.load('KNN.joblib')
 svm = joblib.load('svm.joblib')
 RF = joblib.load('RF.joblib')
 LR = joblib.load('LR.joblib')
@@ -48,4 +48,5 @@ if st.button('進行預測'):
     X = [[se1, se2, se3, se4]]
     y_pred = model.predict(X)
     #st.write(y_pred)
+
     st.success(f'### 預測的IRIS品種為:{labels[y_pred[0]]}')
